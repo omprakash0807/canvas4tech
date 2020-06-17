@@ -2,7 +2,18 @@
 class register_model extends CI_Model{
 
 	public function insertData($uname,$email,$pass,$mobile,$gender,$terms,$token,$ip){
-		$this->db->query("insert into users(username,email,password,mobile,gender,terms,token,ip) values('$uname','$email','$pass','$mobile','$gender','$terms','$token','$ip')");
+
+		$data = array(
+			"username"=>$uname,
+			"email"=>$email,
+			"password"=>$pass,
+			"mobile"=>$mobile,
+			"gender"=>$gender,
+			"terms"=>$terms,
+			"token"=>$token,
+			"ip"=>$ip
+		);
+		$this->db->insert('users',$data);
 		if ($this->db->affected_rows()>0) {
 			return true;
 		}else{
@@ -10,9 +21,12 @@ class register_model extends CI_Model{
 		}
 	}
 
+
 	public function verifyToken($token){
-		$query = $this->db->query("select token from users where token='$token'");
-		if ($query->num_rows()===1) {
+		$this->db->where('token',$token);
+		$results = $this->db->get('users');;
+		
+		if ($results->num_rows()===1) {
 			return true;
 		}else{
 			return false;
@@ -21,8 +35,9 @@ class register_model extends CI_Model{
 	}
 	public function updateStatus($token)
 	{
-		$query = $this->db->query("update users set status='active' where token='$token'");
-		if($query = $this->db->affected_rows()==1)
+		$this->db->where('token',$token);
+		$data = $this->db->update("users",array("status"=>"active"));
+		if($data = $this->db->affected_rows()==1)
 		{
 			return true;
 		}

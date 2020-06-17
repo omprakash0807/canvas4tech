@@ -21,11 +21,11 @@
 	<?php
 		if($this->session->tempdata("success"))
 		{
-			echo "<h4>".$this->session->tempdata("success")."</h4>";
+			echo "<div class='alert alert-success'>".$this->session->tempdata("success")."</div>";
 		}
 		if($this->session->tempdata("error"))
 		{
-			echo "<h4>".$this->session->tempdata("error")."</h4>";
+			echo "<div class='alert alert-danger'>".$this->session->tempdata("error")."</div>";
 		}
 		?>
 	<?php

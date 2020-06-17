@@ -26,7 +26,7 @@
 			$token = md5(str_shuffle($uname.$email.$mobile.time()));
 			$ip = $this->input->server("REMOTE_ADDR");
 
- 		$status = $this->register_model->insertData($uname,$email,$pass,$mobile,$gender,$terms,$token,$ip);
+ 		$status = $this->Register_model->insertData($uname,$email,$pass,$mobile,$gender,$terms,$token,$ip);
  		if ($status==true) {
  			
  			$config=array(
@@ -74,10 +74,10 @@
 		$data=[];
 		if(!empty($token))
 		{
-			$status = $this->register_model->verifyToken($token);
+			$status = $this->Register_model->verifyToken($token);
 			if($status == true)
 			{
-				$ustatus = $this->register_model->updateStatus($token);
+				$ustatus = $this->Register_model->updateStatus($token);
 				if($ustatus==true)
 				{
 					$data['message']="Account Activated Successfully. Please Login Now";
