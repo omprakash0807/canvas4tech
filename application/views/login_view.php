@@ -28,32 +28,20 @@
 		echo "<div class='alert alert-success'>".$this->session->tempdata('success')."</div>";
 	}
 	?>
+	<?php echo form_open('auth/login','class="form-signin"'); ?>
 
-	<?php echo form_open() ?>
-		<table class="table table-borderless">
-
-			<tr>
-				<td>Email</td>
-				<td><input type="text" name="email" class="form-control">
-				<small class="text-danger text-right"> <?php echo form_error("email"); ?></small>
-				</td>
-
-				
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="Password" name="password" class="form-control">
-					<small class="text-danger text-right" ><?php echo form_error("password"); ?></small>
-				</td>
-				
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="submit" value="Login" class="btn btn-primary">
+	<div class="form-group">
+		<label class="font-weight-bold">Email address</label>
+		<input type="text" name="email" class="form-control">
+		<small class="text-danger text-right"> <?php echo form_error("email"); ?></small>
+  	</div>
+	<div class="form-group">
+		<label class="font-weight-bold">Password</label>
+		<input type="Password" name="password" class="form-control">
+		<small class="text-danger text-right" ><?php echo form_error("password"); ?></small>
+	</div>
+		<input type="submit" name="submit" value="Login" class="btn btn-primary">
 					<a href="<?php echo base_url('Auth/forgotpassword');?>">Forgot Password</a>
-				</td>
-			</tr>
-		</table>
 	<?php echo form_close()?>
 		  </div>
 		</div>

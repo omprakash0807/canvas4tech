@@ -31,57 +31,46 @@
 	<?php
 	echo form_open();
 	?>
-		<table class="table table-borderless">
-			<tr>
-				<td>User Name :</td>
-				<td><input class="form-control" type="text" name="uname"  value="<?php echo set_value("uname");?>">
+			<div class="form-group">
+				<label class="font-weight-bold"> Name </label>
+				<input class="form-control" type="text" name="uname"  value="<?php echo set_value("uname");?>">
 				<small class="text-danger text-right"><?php echo form_error("uname");?></small>
-				</td>
-			</tr>
-			<tr>
-				<td>Email :</td>
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold"> Email </label>
 				<td><input class="form-control" type="email" name="email" value="<?php echo set_value("email");?>">
 				<small class="text-danger text-right"><?php echo form_error("email"); ?></small>
-				</td>
-			</tr>
-			<tr>
-				<td>Password :</td>
-				<td><input class="form-control" type="Password" name="pwd"  value="<?php echo set_value("pwd");?>">
+			</div>
+			<div class="form-group">	
+				<label class="font-weight-bold">Password</label>
+				<input class="form-control" type="Password" name="pwd"  value="<?php echo set_value("pwd");?>">
 				<small class="text-danger text-right"><?php echo form_error("pwd"); ?></small>
-				</td>
-			</tr>
-			<tr>
-				<td>Confirm password :</td>
-				<td><input class="form-control" type="Password" name="cpwd"  value="<?php echo set_value("cpwd");?>">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Confirm password</label>
+				<input class="form-control" type="Password" name="cpwd"  value="<?php echo set_value("cpwd");?>">
 				<small class="text-danger text-right"><?php echo form_error("cpwd"); ?></small>
-				</td>
-				
-			</tr>
-			<tr>
-				<td>Mobile :</td>
-				<td><input class="form-control" type="number" name="mobile"  value="<?php echo set_value("mobile");?>">
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Mobile</label>
+				<input class="form-control" type="number" name="mobile"  value="<?php echo set_value("mobile");?>">
 				<small class="text-danger text-right"><?php echo form_error("mobile"); ?></small>
-				</td>	
-			</tr>
-			<tr>
-				<td>Gender :</td>
-				<td><input <?php if(set_value("gender")=="Male") echo "checked" ;?> type="radio" name="gender"  value="Male">Male
+			</div>
+			<div class="form-group">
+				<label class="font-weight-bold">Gender</label>
+				
+				<input <?php if(set_value("gender")=="Male") echo "checked" ;?> type="radio" name="gender"  value="Male">Male 
 				<input <?php if(set_value("gender")=="Female") echo "checked";?> type="radio" name="gender"  value="Female">Female
 				<small class="text-danger text-right"><?php echo form_error("gender"); ?></small>
-			</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input <?php if(set_value("terms")=="1") echo "checked";?> type="checkbox" name="terms" value="1">Please accept terms and conditions.
+				
+			</div>
+			<div class="form-group">
+				<input <?php if(set_value("terms")=="1") echo "checked";?> type="checkbox" name="terms" value="1"><label> Please accept terms and conditions.</label>
 				<small class="text-danger text-right"><?php echo form_error("terms"); ?></small>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="Signup" class="btn btn-primary">
-				</td>
-			</tr>
-		</table>
+			</div>
+				
+				<input type="submit" name="Signup" class="btn btn-primary">
+        
 		<?php
 		echo form_close();
 		?>

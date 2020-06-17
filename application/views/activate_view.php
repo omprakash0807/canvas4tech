@@ -10,7 +10,7 @@
 	}
 	?>
 	<div>
-		<a href="<?php echo base_url('auth/login') ?>">Click here to login</a>
+		<ahref="<?php echo base_url('auth/login') ?>">Click here to login</a>
 	</div>
 </body>
 </html>

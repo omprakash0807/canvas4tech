@@ -40,7 +40,7 @@
 		<?php
 		}else{
 			?>
-			<td><img src="<?php echo base_url()?>assets/profile/default.jpg" height="180" width="150" class="img-thumbnail"><br><a class="btn btn-link" href="Home/uploadAvtar">Change Image</a></td>
+			<td><img src="<?php echo base_url()?>assets/profile/user-avatar.png" height="180" width="150" class="img-thumbnail"><br><a class="btn btn-link" href="Home/uploadAvtar">Change Image</a></td>
 			<td></td>	
 
 		<?php		

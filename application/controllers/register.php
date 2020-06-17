@@ -63,7 +63,7 @@
  	if ($this->email->send()) {
  		
  		$this->session->set_tempdata("success","Account created successfully. Please check your mail to activate your account",2);
- 		redirect(base_url('auth/login'));
+ 		redirect(base_url('register/infoMessag'));
  	}else{
  		$this->session->set_tempdata("error","Account created successfully. Unable to send email activation link, Contact Admin",2);
  		redirect(current_url());
@@ -102,7 +102,12 @@
 		{
 			$data['message'] = "Sorry! We are unable to process your request";
 		}
-		$this->load->view("activate_view",$data);	
+		$this->load->view("common/mail_info",$data);	
+	}
+	public function infoMessag()
+	{
+		$this->load->view('common/mail_info.php');
+		$this->load->view('common/footer');
 	}
 
  }
