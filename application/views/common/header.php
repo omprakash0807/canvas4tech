@@ -97,7 +97,7 @@
           }else{
             ?>
             <li><a href="<?php echo base_url().'auth/login'?>">Login</a></li>
-            <li><a href="<?php echo base_url().'register'?>">Register</a></li>
+            <li><a href="<?php echo base_url().'Register'?>">Register</a></li>
           <?php
           }
           ?>
