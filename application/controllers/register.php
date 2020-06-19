@@ -31,9 +31,9 @@
  			
  			$config=array(
  				"protocol" => "smtp",
-				"smtp_host" => "ssl://smtp.gmail.com",
+				"smtp_host" => "smtp.hostinger.in",
 				"smtp_timeout" => 30,
-				"smtp_port" => 465,
+				"smtp_port" => 587,
 				"smtp_user" => 'ommbest@gmail.com',
 				"smtp_pass" => 'mymomisbest@0807',
 				"charset" => 'utf-8',

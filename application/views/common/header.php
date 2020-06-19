@@ -70,16 +70,16 @@
 
           <li class="drop-down"><a href="#">About</a>
             <ul>
-              <li><a href="<?php echo base_url().'HomePage/about'?>">About Us</a></li>
-              <li><a href="<?php echo base_url().'HomePage/team' ?>">Team</a></li>
+              <li><a href="<?php echo base_url().'about_us'//Home/about?>">About Us</a></li>
+              <li><a href="<?php echo base_url().'our_team' //HomePage/team ?>">Team</a></li>
             </ul>
           </li>
 
-          <li><a href="<?php echo base_url().'HomePage/services'?>">Services</a></li>
-          <li><a href="<?php echo base_url().'HomePage/portfolio'?>">Portfolio</a></li>
-          <li><a href="<?php echo base_url().'HomePage/pricing'?>">Pricing</a></li>
-          <li><a href="<?php echo base_url().'blog'?>">Blog</a></li>
-          <li><a href="<?php echo base_url().'HomePage/contact'?>">Contact</a></li>
+          <li><a href="<?php echo base_url().'services' //HomePage/services?>">Services</a></li>
+          <li><a href="<?php echo base_url().'portfolio' //HomePage/portfolio?>">Portfolio</a></li>
+          <li><a href="<?php echo base_url().'pricing'//HomePage/pricing?>">Pricing</a></li>
+          <li><a href="<?php echo base_url().'blogs' //HomePage/blog ?> ">Blog</a></li>
+          <li><a href="<?php echo base_url().'contact'//HomePage/contact?>">Contact</a></li>
           <li><a href="#">|</a></li>
         
           <?php if($this->session->has_userdata("logintrue")){
@@ -96,8 +96,8 @@
           <?php
           }else{
             ?>
-            <li><a href="<?php echo base_url().'auth/login'?>">Login</a></li>
-            <li><a href="<?php echo base_url().'Register'?>">Register</a></li>
+            <li><a href="<?php echo base_url().'login' //auth/login?>">Login</a></li>
+            <li><a href="<?php echo base_url().'join_us' //register?>">Register</a></li>
           <?php
           }
           ?>

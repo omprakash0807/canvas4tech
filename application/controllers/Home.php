@@ -5,17 +5,25 @@ class Home extends CI_Controller
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Home_Model');
+		if(empty($this->session->userdata('logintrue')))
+		{
+			redirect(base_url('auth/login'));	
+		}
 	}
 	
 	public function index()
 	{
+	// if($this->session->userdata('logintrue'))
+	// {
 	$this->load->view('common/header');	
 	$token = $this->session->userdata('logintrue');
 	$result['data'] = $this->Home_Model->getlLoggedInUserData($token);
 	$this->load->view('home_view',$result);
 	$this->load->view('common/footer');		
-
-	}
+	// }else{
+	// 		redirect(base_url('auth/login'));
+	// }
+}
 	public function logout(){
 		$this->session->unset_userdata("logintrue");
 		redirect(base_url());
@@ -95,6 +103,7 @@ public function changePassword()
 	}
 	public function uploadAvtar()
 	{
+
 		$this->load->view('common/header');
 		$token = $this->session->userdata("logintrue");//session
 
@@ -121,7 +130,7 @@ public function changePassword()
 		$this->load->view('upload_avtar_view');
 		
 		$this->load->view('common/footer');
-	}
-
+		
+}
 }
 ?>
