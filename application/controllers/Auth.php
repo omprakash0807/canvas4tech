@@ -17,12 +17,17 @@ class Auth extends CI_Controller
 			if (!empty($data)) {
 				if (password_verify($password, $data->password)) {
 					if ($data->status == 'active') {
+					if($data->roll_id == 'user')
+					{
 					$this->session->set_userdata(
 						array("logintrue" => $data->token,
 							  "username" => $data->username
 							));
 					redirect(base_url());
-				
+						}else{
+							$this->session->set_userdata("adminlogintrue",$data->id);
+							redirect(base_url('admin/dashboard'));
+						}
 				}else{
 					$this->session->set_tempdata('error','Account not activated',2);
 					redirect(current_url());

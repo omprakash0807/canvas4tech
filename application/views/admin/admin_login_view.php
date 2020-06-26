@@ -30,7 +30,12 @@
 		{
 			echo "<div class='alert alert-danger'>".validation_errors()."</div>";
     }
+    if($this->session->tempdata('error'))
+    {
+      echo "<p class='alert alert-danger'>".$this->session->tempdata('error')."</p>";
+    }
     ?>
+    
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo set_value('email'); ?>" >
           <div class="input-group-append">
@@ -40,7 +45,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="pwd">
+          <input type="password" class="form-control" placeholder="Password" name="password">
          
           <div class="input-group-append">
             <div class="input-group-text">

@@ -36,9 +36,9 @@ class Home_Model extends CI_Model
 
 	}
 	public function checkEmail($token){
-		$this -> db -> where('token !=', $token);
+		$this->db->where('token!=',$token);
 		$result = $this->db->get('users');
-		if($this->db->affected_rows()==1)
+		if($result->num_rows()>0)
 		{
 			return $result->row();
 		}else{

@@ -42,7 +42,7 @@
     <div class="container d-flex">
       <div class="contact-info mr-auto">
         <i class="icofont-envelope"></i><a href="mailto:canvas4tech@gmail.com">canvas4tech@gmail.com</a>
-        <i class="icofont-phone"></i> +91 9776080807
+        <i class="icofont-phone"></i> +91 7008843338
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
@@ -68,23 +68,23 @@
         <ul>
           <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
 
-          <li class="drop-down"><a href="#">About</a>
+          <!-- <li class="drop-down"><a href="#">About</a>
             <ul>
               <li><a href="<?php echo base_url().'about_us'//Home/about?>">About Us</a></li>
               <li><a href="<?php echo base_url().'our_team' //HomePage/team ?>">Team</a></li>
             </ul>
-          </li>
+          </li> -->
 
-          <li><a href="<?php echo base_url().'services' //HomePage/services?>">Services</a></li>
-          <li><a href="<?php echo base_url().'portfolio' //HomePage/portfolio?>">Portfolio</a></li>
-          <li><a href="<?php echo base_url().'pricing'//HomePage/pricing?>">Pricing</a></li>
-          <li><a href="<?php echo base_url().'blogs' //HomePage/blog ?> ">Blog</a></li>
+          <li><a href="<?php echo base_url().'services' //HomePage/services?>">Technology</a></li>
+          <li><a href="<?php echo base_url().'portfolio' //HomePage/portfolio?>">Review</a></li>
+          <li><a href="<?php echo base_url().'pricing'//HomePage/pricing?>">Tips and Tricks</a></li>
+          <li><a href="<?php echo base_url().'blogs' //HomePage/blog ?> ">Tech News</a></li>
           <li><a href="<?php echo base_url().'contact'//HomePage/contact?>">Contact</a></li>
           <li><a href="#">|</a></li>
         
           <?php if($this->session->has_userdata("logintrue")){
          ?>
-          <li class="drop-down"><a href="#"><?php echo ucwords($this->session->userdata('username')); ?>!</a>
+          <li class="drop-down"><a href="#"><?php echo ucwords($this->session->userdata('username')); ?></a>
             <ul>
               <li><a href="<?php echo base_url().'Home'?>">Profile</a></li>
               <li><a href="<?php echo base_url().'Home/editprofile'?>">Edit profile</a></li>

@@ -4,7 +4,7 @@ class Auth_Model extends CI_Model
 {
 	public function verifyEmail($email)
 	{
-		$this->db->select('username,password,status,token');
+		$this->db->select('id,username,password,status,token,roll_id');
 		$this->db->from('users');
 		$this->db->where('email',$email);
 		$result = $this->db->get();

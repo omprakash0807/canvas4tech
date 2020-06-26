@@ -42,8 +42,8 @@ class Home extends CI_Controller
 		   $email = html_escape($this->security->xss_clean($this->input->post("email")));
 		   $mobile = html_escape($this->security->xss_clean($this->input->post("mobile")));
 		   $gender = html_escape($this->security->xss_clean($this->input->post("gender")));
-		   $checkemail= $this->Home_Model->checkEmail($token);
-			if($checkemail->email != $email)
+		   $data= $this->Home_Model->checkEmail($token);
+			if($data->email != $email)
 			{
 		  $status = $this->Home_Model->updateProfile($uname,$email,$mobile,$gender,$token);
 		  if($status == true)
@@ -109,9 +109,9 @@ public function changePassword()
 
 		$config['upload_path'] = './assets/profile/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size']     = '10000';
-		$config['max_width'] = '1024';
-		$config['max_height'] = '768';
+		// $config['max_size']     = '10000';
+		// $config['max_width'] = '1024';
+		// $config['max_height'] = '768';
 
 		$this->upload->initialize($config);
 		if($this->upload->do_upload("avatar"))
