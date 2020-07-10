@@ -1,3 +1,12 @@
+<?php
+if($this->session->tempdata('error')){
+  echo $this->session->tempdata('error');
+}
+  if($this->session->tempdata('success')){
+    echo $this->session->tempdata('success');
+}
+
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">

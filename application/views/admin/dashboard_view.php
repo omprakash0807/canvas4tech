@@ -67,6 +67,7 @@
           </div>
           <!-- ./col -->
         </div>
+        <div id="piechart" style="width: 700px; height: 400px;"></div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>

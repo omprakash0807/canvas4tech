@@ -11,7 +11,19 @@ class Banner extends CI_Controller
         $this->form_validation->set_rules('blink','Button link','trim|required|valid_url');
         if($this->form_validation->run()==true)
         {
-            $this->input->post('bti');
+            $config['upload_path'] = './assets/admin/banners';
+            $config['allowed_types'] = 'gif|jpg|png';
+            //$config['max_size'] = '1000';
+            // $config['max_width'] = '1024';
+            // $config['max_height'] = '768';
+            $this->upload->initialize($config);
+            if($this->upload->do_upload('file'));
+            {
+                $data  = $this->upload->data();
+                $fdata = $data['file_name'];
+                $this->session->set_tempdata('error','Sorry! File did not uploaded',2);
+                redirect(current_url()); 
+            }
         }else{
         $this->load->view('admin/add_banner_view');
         $this->load->view('admin/footer');

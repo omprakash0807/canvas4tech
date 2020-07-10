@@ -9,7 +9,7 @@ class Home_Model extends CI_Model
 		$results = $this->db->get('users');
 		if ($results->num_rows()==1)
 		{
-			
+			print_r($result->$row);die;
 			return $results->row();
 		}
 		else
